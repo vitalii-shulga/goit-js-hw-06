@@ -9,13 +9,14 @@ function onFormSubmit(event) {
     elements: { email, password },
   } = event.currentTarget
 
-  const userData = {}
-  userData[email.name] = email.value
-  userData[password.name] = password.value
-  console.log(userData)
-
   if (email.value === '' || password.value === '') {
-    return alert('Все поля должны быть заполнены')
+    alert('Все поля должны быть заполнены')
+  } else {
+    const userData = {
+      email: email.value,
+      password: password.value,
+    }
+    console.log(userData)
   }
 
   event.currentTarget.reset()
